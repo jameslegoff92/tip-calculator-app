@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title" >Spli<br>tter</h1>
+  </header>
+  <main class="container">
+    <div class="bill">
+      <label for="bill-amount" class="bill__title">Bill</label><br>
+      <input id="bill-amount" class="bill__input" name="bill-amount" type="number">
+    </div>
+    <div class="tip">
+     <p class="tip__title">Select Tip %</p>
+     <div class="grid">
+      <button id="five" class="tip__btn">5%</button>
+      <button id="ten" class="tip__btn">10%</button>
+      <button id="fifthteen" class="tip__btn">15%</button>
+      <button id="twenty-five" class="tip__btn">25%</button>
+      <button id="fifty" class="tip__btn">50%</button>
+      <input id="tip-percent" class="tip__custom" name="tip-percent" type="number" placeholder="Custom">
+     </div>
+    </div>
+    <div class="people">
+      <label for="people-qty" class="people__title">Number of People</label><br>
+      <input id="people-qty" class="people__amount" name="people-qty" type="number">
+    </div>
+    <div class="result">
+      <div class="display">
+        <p class="display__text">Tip Amount<br><span>/ person</span></p>
+        <p id="tipAmount" class="display__amount">$0.00</p>
+      </div>
+      <div class="display">
+        <p class="display__text">Total<br><span>/ person</span></p>
+        <p id="totalAmount" class="display__amount">$0.00</p>
+      </div>
+      <button class="reset" type="reset">Reset</button>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+// Mobile Components
+//Mobile Header
+.header__title {
+  text-transform: uppercase;
+}
+
+// Bill component
+.bill {
+  margin: 2rem;
+}
+.bill__title {
+  @include primary-label-styling;
+}
+.bill__input {
+  @include primary-input-styling;
+  background: $lightest-grayish-cyan url(../images/icon-dollar.svg) 1.0925em no-repeat;
+  font-size: 1rem;
+  height: 3em;
+  padding: 0.375em 1.0925em;
+  width: 100%;
+}
+.bill__input:focus {
+  outline: 1px solid $strong-cyan;
+}
+
+//Tip % selecting component
+.tip {
+  margin: 2rem auto;
+}
+.tip__title {
+  @include primary-label-styling;
+}
+.tip__btn {
+  background: $very-dark-cyan;
+  border: none;
+  border-radius: $border-radius;
+  color: $white;
+  font-family: $font-family;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 3rem; //Vertically centers the text inside the button.
+  text-align: center;
+}
+.tip__btn:hover {
+  background: $strong-cyan;
+  color: $very-dark-cyan;
+  cursor: pointer;
+}
+.tip__btn--active {
+  background: $strong-cyan;
+  color: $very-dark-cyan;
+  cursor: pointer;
+}
+.tip__custom {
+  border: none;
+  border-radius: $border-radius;
+  background: $lightest-grayish-cyan;
+  color: $very-dark-cyan;
+  font-family: $font-family;
+  font-weight: 700;
+  text-align: right;
+  padding: 0;
+  
+}
+.tip__custom:focus {
+  outline: 1px solid $strong-cyan;
+}
+::placeholder {
+  @include primary-label-styling;
+  font-size: 1.5rem;
+  padding-top: 10px;
+  text-align: center;
+}
+input:focus::placeholder {
+  color: transparent; //Makes the input placeholder disappear
+}
+
+// Component for the amount of people
+.people {
+  margin: 2rem;
+}
+.people__title {
+  @include primary-label-styling;
+}
+.people__amount {
+  @include primary-input-styling;
+  background: $lightest-grayish-cyan url(../images/icon-person.svg) 1.0925em no-repeat;
+  font-size: 1rem;
+  height: 3em;
+  padding: 0.375em 1.0925em;
+  width: 100%;
+}
+.people__amount:focus {
+  outline: 1px solid $strong-cyan;
+}
+
+// Component displaying the calculated amounts
+.display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.display__text {
+  color: $white;
+}
+.display__text span {
+  color: $dark-grayish-cyan;
+  font-size: 0.8125rem;
+}
+.display__amount {
+  color: $strong-cyan;
+  font-size: 2rem;
+}
+
+//Reset button component
+.reset {
+  background: $strong-cyan;
+  border: none;
+  border-radius: $border-radius;
+  color: $very-dark-cyan;
+  font-family: $font-family;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 48px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.reset:hover {
+  background: hsl(172, 61, 77);
+  cursor: pointer;
+}

@@ -1,0 +1,52 @@
+//Colors
+$strong-cyan: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$medium-grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$lightest-grayish-cyan: hsl(185, 38%, 97%);
+$white: white;
+
+// Typography
+$font-family: 'Space Mono', monospace;
+$font-weight-medium: 400;
+$font-weight-bold: 700;
+
+$border-radius: 5px;
+
+//Mixins
+@mixin primary-label-styling {
+  color: $dark-grayish-cyan;
+}
+
+@mixin primary-input-styling {
+  border: none;
+  border-radius: $border-radius;
+  background: $lightest-grayish-cyan;
+  color: $very-dark-cyan;
+  font-family: $font-family;
+  font-weight: 700;
+  text-align: right;
+}
+
+//CSS Resets
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, * ::before, * ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background: $light-grayish-cyan;
+  font-family: $font-family;
+  height: 100vh;
+  min-width: 23.4375rem;
+  max-width: 100%;
+}
+
+
