@@ -130,3 +130,24 @@ input:focus::placeholder {
   background: hsl(172, 61, 77);
   cursor: pointer;
 }
+
+@media only screen and (min-width:920px) {
+  .bill {
+    margin: 0;
+    margin-bottom: 40px;
+  }
+  .tip {
+    margin: 0 0 0 0;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+  .people {
+    margin: 0;
+  }
+  .display:nth-child(1) {
+    margin-top: 40px;
+  }
+  .display:nth-child(2) {
+    margin-bottom: 139px;
+  }
+}
