@@ -1,64 +1,80 @@
 //The inputValidator function is used to validate the inputs entered by user's.
 function inputValidator(e) {
-  const inputElementAmount = $(this).val();  //The 'this' here is vanilla javascript. It grabs the input value of the element that triggers the blur event.
-  // console.log($(this).text());
-  if (inputElementAmount < 0) {
-    const $inputErrMsg = $('<p class="input__errMsg">Must be greater than 0 </p>');
-    $inputErrMsg.css({
-      "color": "red",
-      "font-size": "10px",
-      "text-align": "right"
-    });
-    $(this).after($inputErrMsg); //The $(this) here refers to the object that was clicked
+  const inputElementAmount = parseFloat($(this).val());
+
+  if (inputElementAmount <= 0) {
+    switch (this.id) {
+      case "bill-amount":
+        $("#bill-errmsg").html("Must be greater than zero");
+        break;
+      case "tip-percent":
+        $("#tip-errmsg").html("Must be greater than zero");
+        break;
+      case "people-qty":
+        $("#people-errmsg").html("Must be greater than zero");
+        break;
+      default:
+        console.log("case null");
+    }
   } else {
-    $('.input__errMsg').remove();
+    switch (this.id) {
+      case "bill-amount":
+        $("#bill-errmsg").html("");
+        break;
+      case "tip-percent":
+        $("#tip-errmsg").html("");
+        break;
+      case "people-qty":
+        $("#people-errmsg").html("");
+        break;
+      default:
+        console.log("case null");
+    }
   }
-  
-  if (e.target.className === 'tip__btn') {
-    $('.tip__custom').val('');
-    $('.tip__btn--active').removeClass('tip__btn--active');
-    $('#' + e.target.id).addClass('tip__btn--active');
-  } 
-  
-  const correctPercentAmount = parseFloat($('.tip__btn--active').text());
-  console.log(correctPercentAmount);
 
-  const billAmount = parseFloat($('.bill__input').val().toString());
-  console.log(billAmount);
+  if (e.target.className === "tip__btn") {
+    $(".tip__custom").val("");
+    $(".tip__btn--active").removeClass("tip__btn--active");
+    $("#" + e.target.id).addClass("tip__btn--active");
+  }
 
-  const customPercent = parseFloat($('.tip__custom').val().toString());
-  console.log(customPercent);
+  if (e.target.className === "tip__custom") {
+    $(".tip__btn--active").removeClass("tip__btn--active");
+  }
 
-  const amountOfPeople = parseFloat($('.people__amount').val().toString());
-  console.log(amountOfPeople);
+  const clickedPercentAmount = parseFloat($(".tip__btn--active").text());
+
+  const customPercent = parseFloat($(".tip__custom").val().toString());
+
+  const chosenAmount = clickedPercentAmount
+    ? clickedPercentAmount
+    : customPercent;
+
+  const billAmount = parseFloat($(".bill__input").val().toString());
+
+  const amountOfPeople = parseFloat($(".people__amount").val().toString());
 
   if (customPercent > 0) {
-    $('.tip__btn--active').removeClass('tip__btn--active');
-  }
-  
-  if ((billAmount > 0) && (correctPercentAmount > 0) && (amountOfPeople > 0)) {
-    const tipAmountPerPerson = (billAmount * (correctPercentAmount / 100) / amountOfPeople);
-    $('#tipAmount').html('$' + tipAmountPerPerson.toFixed(2));
-
-    const totalAmountPerPerson = (billAmount * (1 + (correctPercentAmount / 100)) / amountOfPeople);
-    $('#totalAmount').html('$' + totalAmountPerPerson.toFixed(2));
-
-  } else if ((billAmount > 0) && (customPercent > 0) && (amountOfPeople > 0)) {
-
-    const tipAmountPerPerson = (billAmount * (customPercent / 100) / amountOfPeople);
-    $('#tipAmount').html('$' + tipAmountPerPerson.toFixed(2));
-
-    const totalAmountPerPerson = (billAmount * (1 + (customPercent / 100)) / amountOfPeople);
-    $('#totalAmount').html('$' + totalAmountPerPerson.toFixed(2));
+    $(".tip__btn--active").removeClass("tip__btn--active");
   }
 
-  if (e.target.className === 'reset') {
-    $('.bill__input').val('');
-    $('.tip__btn--active').removeClass('tip__btn--active');
-    $('.tip__custom').val('');
-    $('.people__amount').val('');
-    $('#tipAmount').html('$0.00');
-    $('#totalAmount').html('$0.00');
+  if (billAmount >= 0 && chosenAmount >= 0 && amountOfPeople > 0) {
+    const tipAmountPerPerson =
+      (billAmount * (chosenAmount / 100)) / amountOfPeople;
+    $("#tipAmount").html("$" + tipAmountPerPerson.toFixed(2));
+
+    const totalAmountPerPerson =
+      (billAmount * (1 + chosenAmount / 100)) / amountOfPeople;
+    $("#totalAmount").html("$" + totalAmountPerPerson.toFixed(2));
+  }
+
+  if (e.target.className === "reset") {
+    $(".bill__input").val("");
+    $(".tip__btn--active").removeClass("tip__btn--active");
+    $(".tip__custom").val("");
+    $(".people__amount").val("");
+    $("#tipAmount").html("$0.00");
+    $("#totalAmount").html("$0.00");
   }
 }
 

@@ -18,6 +18,26 @@ body {
   max-width: 100%;
 }
 
+/* To get rid of arrows for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.errmsg {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+}
+
 .header {
   margin: 3.125rem auto 2.5537rem;
   text-align: center;
@@ -33,6 +53,7 @@ body {
 }
 
 .tip {
+  position: relative;
   max-width: 82.9333333%;
 }
 
@@ -89,6 +110,7 @@ body {
 
 .bill {
   margin: 2rem;
+  position: relative;
 }
 
 .bill__title {
@@ -106,7 +128,7 @@ body {
   background: #f4fafa url(../images/icon-dollar.svg) 1.0925em no-repeat;
   font-size: 1rem;
   height: 3em;
-  padding: 0.375em 1.0925em;
+  padding: 0.375em 1.0925em 0.375em 2.5em;
   width: 100%;
 }
 
@@ -154,7 +176,7 @@ body {
   font-family: "Space Mono", monospace;
   font-weight: 700;
   text-align: right;
-  padding: 0;
+  padding: 1em;
 }
 
 .tip__custom:focus {
@@ -174,6 +196,7 @@ input:focus::placeholder {
 
 .people {
   margin: 2rem;
+  position: relative;
 }
 
 .people__title {

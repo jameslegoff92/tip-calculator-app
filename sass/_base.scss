@@ -49,4 +49,24 @@ body {
   max-width: 100%;
 }
 
+/* To get rid of arrows for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.errmsg {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+}
+
 
