@@ -8,22 +8,20 @@
 - [What I learned](#what-i-learned)
 - [Author](#author)
 
-## My process
-
-1. Analyze design files before creating markup.
-2. Look for repetitive components or styles.
-3. Use the mobile first methodology, building section by section.
-4. Verify the site's aesthetics at all sizes.
-5. Refactor code to enhance readability.
-
 ### Built with
 
 - Semantic HTML5 markup
 - BEM Methodology
 - Sass
-- GRID
+- CSS GRID
 - JQuery
 - Mobile-first workflow
+
+## Objective of this Project
+
+- To become more familiar with the principles of responsive design.
+- To practice form input validation and frontend logic.
+- To practice using the JQuery library in development.
 
 ### What I learned
 
@@ -36,3 +34,4 @@
 
 - Frontend Mentor - https://www.frontendmentor.io/profile/jameslegoff92
 - Twitter - https://twitter.com/jameslegoff
+- Medium - https://medium.com/@jameslegoff92
