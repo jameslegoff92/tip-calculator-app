@@ -9,7 +9,7 @@
 - [What I learned](#what-i-learned)
 - [Author](#author)
 
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - BEM Methodology
@@ -24,7 +24,7 @@
 - To practice form input validation and frontend logic.
 - To practice using the JQuery library in development.
 
-### What I learned
+## What I learned
 
 - The pseudo elements ::after and ::before don't work on the html input element. 
 - The subtle differences between the keyup and keydown events. 
