@@ -5,6 +5,7 @@
 ## Table of contents
 - [My process](#my-process)
 - [Built with](#built-with)
+- [Objectives](#objectives)
 - [What I learned](#what-i-learned)
 - [Author](#author)
 
