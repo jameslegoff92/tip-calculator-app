@@ -28,7 +28,6 @@ function inputValidator(e) {
         $("#people-errmsg").html("");
         break;
       default:
-        console.log("case null");
     }
   }
 
@@ -59,13 +58,20 @@ function inputValidator(e) {
   }
 
   if (billAmount >= 0 && chosenAmount >= 0 && amountOfPeople > 0) {
-    const tipAmountPerPerson =
+    let tipAmountPerPerson =
       (billAmount * (chosenAmount / 100)) / amountOfPeople;
-    $("#tipAmount").html("$" + tipAmountPerPerson.toFixed(2));
-
-    const totalAmountPerPerson =
-      (billAmount * (1 + chosenAmount / 100)) / amountOfPeople;
-    $("#totalAmount").html("$" + totalAmountPerPerson.toFixed(2));
+    let totalAmountPerPerson =
+        (billAmount * (1 + chosenAmount / 100)) / amountOfPeople;
+    
+    if (totalAmountPerPerson > 100000000000) {
+      tipAmountPerPerson = "???"
+      totalAmountPerPerson = "???"
+      $("#tipAmount").html("$" + tipAmountPerPerson);
+      $("#totalAmount").html("$" + totalAmountPerPerson);
+    } else {
+      $("#tipAmount").html("$" + tipAmountPerPerson.toFixed(2));
+      $("#totalAmount").html("$" + totalAmountPerPerson.toFixed(2));
+    }
   }
 
   if (e.target.className === "reset") {
